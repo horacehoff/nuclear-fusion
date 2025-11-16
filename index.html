@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <base href="/nuclear-fusion/" />
+        <meta charset="UTF-8" />
+        <link href="./favicon.png" rel="icon" type="image/svg+xml" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta name="author" content="Horace Hoff" />
+        <link rel="canonical" href="https://horacehoff.com/nuclear-fusion/" />
+        <title>Nuclear Fusion</title>
+
+        <meta content="Nuclear Fusion" name="title" />
+        <meta
+            content="Nuclear Fusion - Clean, Limitless Energy for the Benefit of All Humanity."
+            name="description"
+        />
+
+        <meta content="website" property="og:type" />
+        <meta content="https://nuclearfusion.vercel.app/" property="og:url" />
+        <meta content="Nuclear Fusion" property="og:title" />
+        <meta
+            content="Nuclear Fusion - Clean, Limitless Energy for the Benefit of All Humanity."
+            property="og:description"
+        />
+        <meta content="./banner.png" property="og:image" />
+        <meta content="summary_large_image" property="twitter:card" />
+        <meta
+            content="https://nuclearfusion.vercel.app/"
+            property="twitter:url"
+        />
+        <meta content="Nuclear Fusion" property="twitter:title" />
+        <meta
+            content="Nuclear Fusion - Clean, Limitless Energy for the Benefit of All Humanity."
+            property="twitter:description"
+        />
+        <meta content="./banner.png" property="twitter:image" />
+
+        <link rel="stylesheet" href="./index.css" />
+    </head>
+    <body>
+        <canvas class="fusionstorm" id="fusionstorm"></canvas>
+
+        <a
+            class="inspire"
+            id="inspire"
+            href="https://usfusionenergy.org/opportunities"
+            target="_blank"
+            >Inspire</a
+        >
+        <a class="about" href="https://horacehoff.com/" target="_blank"
+            >About</a
+        >
+
+        <div class="fusion-text" id="fusion-text">
+            <h1 class="fusion-title" id="fusion-title">NUCLEAR FUSION</h1>
+            <h2 class="fusion-subtitle" id="fusion-subtitle">
+                CLEAN-ENERGY FOR ALL OF HUMANITY
+            </h2>
+        </div>
+        <p id="learn-more" class="learn-more">
+            Learn More
+            <svg
+                width="24"
+                height="24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <g clipPath="url(#clip0_489_191220)">
+                    <path
+                        d="M12 3v18m0 0l-7-6m7 6l7-6"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    ></path>
+                </g>
+                <defs>
+                    <clipPath id="clip0_489_191220">
+                        <path fill="currentColor" d="M0 0H24V24H0z"></path>
+                    </clipPath>
+                </defs>
+            </svg>
+        </p>
+        <iframe
+            class="fusion-intro-video"
+            src="https://www.youtube-nocookie.com/embed/g_BUbEIyaz8?si=LEPGJtiu42zGxWkH"
+            title="Fusion introduction video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+        ></iframe>
+        <div class="fusion-data-title">
+            <span id="fusion-data-energy" class="fusion-data-stat">
+                ⚡️ How much energy ?
+                <br />
+                <span class="fusion-data-desc data1"
+                    >Nuclear fusion generates 4x more energy than nuclear
+                    fission</span
+                >
+                <br /><br />
+            </span>
+            <span id="fusion-data-carbon" class="fusion-data-stat">
+                🏭 Carbon emissions ?
+                <br />
+                <span class="fusion-data-desc helium data1"
+                    >Nuclear fusion only releases helium, a safe and inert gas
+                    that is harmless to the environment</span
+                >
+                <br /><br />
+            </span>
+            <span id="fusion-data-waste" class="fusion-data-stat">
+                ☢️ Radioactive waste ?
+                <br />
+                <span class="fusion-data-desc data1"
+                    >Nuclear fusion does not generate any kind of long-lasting
+                    waste whatsoever.</span
+                >
+                <br /><br />
+            </span>
+            <span id="fusion-data-safety" class="fusion-data-stat">
+                💥 Nuclear explosions !?
+                <br />
+                <span class="fusion-data-desc data4"
+                    >There is no risk of a runaway/meltdown with nuclear fusion,
+                    as opposed to nuclear fission</span
+                >
+            </span>
+        </div>
+        <div class="fusion-energy-demo" id="fusion-energy-demo">
+            <label htmlFor="atomReactions">Deuterium/Tritium mass</label>
+            <br />
+            <div id="atomReactions">
+                <input
+                    type="range"
+                    min="1"
+                    max="100"
+                    value="1"
+                    class="fusion-energy-slider"
+                    id="deuteriumReactions"
+                    oninput="deuteriumReactionsCall()"
+                />
+                <span class="fusion-energy-slider-values" id="deuteriumval"
+                    >1g</span
+                >
+                <br />
+                <input
+                    type="range"
+                    min="1"
+                    max="100"
+                    value="1"
+                    class="fusion-energy-slider"
+                    id="tritiumReactions"
+                    oninput="tritiumReactionsCall()"
+                />
+                <span class="fusion-energy-slider-values" id="tritiumval"
+                    >1g</span
+                >
+            </div>
+            <h3>Energy released:</h3>
+            <span id="fusion-energy-value">17,59mV</span>
+            <br />
+            <span id="fusion-energy-value-wh">2603677 light bulbs/1h</span>
+            <br />
+            <span id="fusion-energy-value-homes">14 homes for a year</span>
+        </div>
+        <div class="fusion-info-sources">
+            <a href="https://www.iter.org/sci/Fusion">ITER</a>
+            <br />
+            <a href="https://ccfe.ukaea.uk/fusion-energy/fusion-in-brief/"
+                >Culham Centre For Fusion Energy</a
+            >
+            <br />
+            <a href="https://en.wikipedia.org/wiki/Tritium"
+                >Tritium - Wikipedia</a
+            >
+            <br />
+            <a href="https://en.wikipedia.org/wiki/Deuterium"
+                >Deuterium - Wikipedia</a
+            >
+            <br />
+            <a href="https://en.wikipedia.org/wiki/Nuclear_fusion#Process"
+                >Nuclear Fusion - Wikipedia</a
+            >
+        </div>
+        <div style="margin-bottom: 3500px"></div>
+    </body>
+    <script>
+        document.getElementById("fusionstorm").width = Math.max(
+            document.documentElement.clientWidth || 0,
+            window.innerWidth || 0,
+        );
+        document.getElementById("fusionstorm").height = Math.max(
+            document.documentElement.clientHeight || 0,
+            window.innerHeight || 0,
+        );
+        let stop = false;
+        function fusionStormAnim() {
+            const canvas = document.getElementById("fusionstorm");
+
+            if (canvas.getContext) {
+                const ctx = canvas.getContext("2d", { alpha: false });
+                ctx.reset();
+                ctx.imageSmoothingEnabled = false;
+                if (window.matchMedia("(max-width: 500px)").matches) {
+                    ctx.fillStyle = `rgba(255, 0, 0, 0.5)`;
+                } else {
+                    ctx.fillStyle = `rgba(255, 0, 0, 1)`;
+                }
+
+                const numParticles = 3000; // Number of particles
+                const particleRadius = 1; // Radius of each particle
+                // const minRed = 200;// Minimum red value
+                // const maxRed = 255; // Maximum red value
+                const speed = 10; // Movement speed
+
+                // Array to store particles' positions and velocities
+                const particles = [];
+
+                // Initialize particles
+                for (let i = 0; i < numParticles; i++) {
+                    particles.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height,
+                        vx: Math.random() * speed * 2 - speed,
+                        vy: Math.random() * speed * 2 - speed,
+                        // red: Math.floor(Math.random() * (maxRed - minRed + 1) + minRed)
+                    });
+                }
+
+                // Function to draw a single particle
+                // function drawParticle(x, y) {
+                //     ctx.beginPath();
+                //     ctx.arc(x, y, particleRadius, 0, Math.PI * 2);
+                //     ctx.fill();
+                // }
+                function drawParticle(x, y) {
+                    ctx.moveTo(x + particleRadius, y);
+                    ctx.arc(x, y, particleRadius, 0, Math.PI * 2);
+                }
+
+                // Function to update particles' positions
+                function updateParticles() {
+                    for (let i = 0; i < numParticles; i++) {
+                        let particle = particles[i];
+                        particle.x += particle.vx;
+                        particle.y += particle.vy;
+
+                        // Wrap around canvas edges
+                        if (particle.x < 0) particle.x = canvas.width;
+                        if (particle.x > canvas.width) particle.x = 0;
+                        if (particle.y < 0) particle.y = canvas.height;
+                        if (particle.y > canvas.height) particle.y = 0;
+                    }
+                }
+
+                // Function to animate the particles
+                function animate() {
+                    if (stop) {
+                        return;
+                    }
+                    // Clear canvas
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                    // Update particles
+                    updateParticles();
+
+                    // Draw particles
+                    ctx.beginPath();
+                    for (let i = 0; i < numParticles; i++) {
+                        const { x, y } = particles[i];
+                        drawParticle(x, y);
+                    }
+                    ctx.stroke();
+                    ctx.fill();
+
+                    // Request animation frame
+                    requestAnimationFrame(animate);
+                }
+
+                // Start animation
+                animate();
+            }
+        }
+        fusionStormAnim();
+
+        let deuteriumReactions = 1;
+        let tritiumReactions = 1;
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        };
+        window.onpagehide = function () {
+            window.scrollTo(0, 0);
+        };
+
+        let navElement = document.getElementById("learn-more");
+        let fusionSubtitle = document.getElementById("fusion-subtitle");
+        let fusionDataEnergy = document.getElementById("fusion-data-energy");
+        let fusionDataCarbon = document.getElementById("fusion-data-carbon");
+        let fusionDataWaste = document.getElementById("fusion-data-waste");
+        let fusionDataSafety = document.getElementById("fusion-data-safety");
+        let fusionEnergyDemo = document.getElementById("fusion-energy-demo");
+        let fusionText = document.getElementById("fusion-text");
+        let fusionTitle = document.getElementById("fusion-title");
+        let fusionStorm = document.getElementById("fusionstorm");
+
+        let fusionTitleText = "NUCLEAR FUSION";
+        let fusionTitleColor = null;
+
+        let constant_top = 0;
+
+        function tritiumReactionsCall(e) {
+            let tritiumValue =
+                document.getElementById("tritiumReactions").value;
+            tritiumReactions = tritiumValue;
+            document.getElementById("tritiumval").innerHTML =
+                tritiumValue + "g";
+            let unit = "kWh";
+
+            let deuterium_atoms = deuteriumReactions / (3.34440385 * 10 ** -24);
+            let tritium_atoms = tritiumValue / (5.00814985 * 10 ** -24);
+            let atoms = Math.min(deuterium_atoms, tritium_atoms);
+            let energy = atoms * 17.58 * 4.45037828 * 10 ** -20;
+            let energy_kwh = energy;
+            if (energy * 10 ** -12 > 1) {
+                energy = energy * 10 ** -12;
+                unit = "PWh";
+            } else if (energy * 10 ** -9 > 1) {
+                energy = energy * 10 ** -9;
+                unit = "TWh";
+            } else if (energy * 10 ** -6 > 1) {
+                energy = energy * 10 ** -6;
+                unit = "GWh";
+            } else if (energy * 10 ** -3 > 1) {
+                energy = energy * 10 ** -3;
+                unit = "MWh";
+            }
+
+            document.getElementById("fusion-energy-value").innerHTML =
+                (Math.round(energy * 10) / 10).toFixed(1) + unit;
+            document.getElementById("fusion-energy-value-homes").innerHTML =
+                Math.floor(energy_kwh / 10715) + " homes for a year";
+            document.getElementById("fusion-energy-value-wh").innerHTML =
+                Math.floor((energy_kwh * 1000) / 60) + " light bulbs/1h";
+        }
+
+        function deuteriumReactionsCall(e) {
+            let deuteriumValue =
+                document.getElementById("deuteriumReactions").value;
+
+            deuteriumReactions = deuteriumValue;
+            // document.getElementById("deuteriumReactions").value =
+            //     e.target.value;
+            document.getElementById("deuteriumval").innerHTML =
+                deuteriumValue + "g";
+            let unit = "kWh";
+
+            let deuterium_atoms = deuteriumValue / (3.34440385 * 10 ** -24);
+            let tritium_atoms = tritiumReactions / (5.00814985 * 10 ** -24);
+            let atoms = Math.min(deuterium_atoms, tritium_atoms);
+            let energy = atoms * 17.58 * 4.45037828 * 10 ** -20;
+            let energy_kwh = energy;
+            if (energy * 10 ** -12 > 1) {
+                energy = energy * 10 ** -12;
+                unit = "PWh";
+            } else if (energy * 10 ** -9 > 1) {
+                energy = energy * 10 ** -9;
+                unit = "TWh";
+            } else if (energy * 10 ** -6 > 1) {
+                energy = energy * 10 ** -6;
+                unit = "GWh";
+            } else if (energy * 10 ** -3 > 1) {
+                energy = energy * 10 ** -3;
+                unit = "MWh";
+            }
+            document.getElementById("fusion-energy-value").innerHTML =
+                (Math.round(energy * 10) / 10).toFixed(1) + unit;
+            document.getElementById("fusion-energy-value-homes").innerHTML =
+                Math.floor(energy_kwh / 10715) + " homes for a year";
+            document.getElementById("fusion-energy-value-wh").innerHTML =
+                Math.floor((energy_kwh * 1000) / 60) + " light bulbs/1h";
+        }
+
+        function makeElementFixed(elementId) {
+            const element = document.getElementById(elementId);
+            // console.log(document.getElementById("fusion-title").clientHeight)
+            if (!element) return;
+
+            const rect = element.getBoundingClientRect();
+            // const topOffset = rect.top+34.304+(56.320 / 2)+5;
+            const topOffset =
+                rect.top +
+                34.304 +
+                document.getElementById("fusion-title").clientHeight / 2 +
+                5;
+
+            element.style.position = "fixed";
+            if (constant_top === 0) {
+                constant_top = topOffset;
+                element.style.top = `${topOffset}px`;
+                console.log(topOffset);
+            } else {
+                element.style.top = `${constant_top}px`;
+            }
+        }
+
+        function changeCss() {
+            requestAnimationFrame(() => {
+                // console.log(scrollY)
+                // Update navigation element opacity
+                navElement.style.opacity = scrollY > 50 ? 0 : 1;
+
+                // Update element opacities
+                fusionSubtitle.style.opacity = mapRange(
+                    scrollY,
+                    170,
+                    190,
+                    1,
+                    0,
+                );
+                fusionDataEnergy.style.opacity = mapRange(
+                    scrollY,
+                    1000,
+                    1100,
+                    0,
+                    1,
+                );
+                fusionDataCarbon.style.opacity = mapRange(
+                    scrollY,
+                    1160,
+                    1220,
+                    0,
+                    1,
+                );
+                fusionDataWaste.style.opacity = mapRange(
+                    scrollY,
+                    1300,
+                    1360,
+                    0,
+                    1,
+                );
+                fusionDataSafety.style.opacity = mapRange(
+                    scrollY,
+                    1420,
+                    1480,
+                    0,
+                    1,
+                );
+                fusionEnergyDemo.style.opacity = mapRange(
+                    scrollY,
+                    1900,
+                    2200,
+                    0,
+                    1,
+                );
+
+                // Update fusion text position
+                if (scrollY > 190) {
+                    // fusionText.style.position = "fixed";
+                    // // fusionText.style.top = "226px";
+                    // fusionText.style.top = "27.033492822966508vw";
+                    makeElementFixed("fusion-text");
+                } else {
+                    fusionText.style.position = null;
+                    fusionText.style.top = null;
+                }
+
+                // Update fusion title
+
+                if (scrollY > 2800) {
+                    fusionTitleText = "SOURCES";
+                    fusionTitleColor = "white";
+                } else if (scrollY > 1930) {
+                    fusionTitleText = "ENERGY";
+                    fusionTitleColor = "white";
+                } else if (scrollY > 850) {
+                    fusionTitleText = "THIS MEANS";
+                    fusionTitleColor = "white";
+                    fusionTitle.dataset.title = "t";
+                } else if (scrollY > 280) {
+                    fusionTitleText = "INTRODUCTION";
+                    fusionTitleColor = "white";
+                    fusionTitle.dataset.title = "i";
+                } else {
+                    fusionTitleText = "NUCLEAR FUSION";
+                    fusionTitleColor = null;
+                    fusionTitle.dataset.title = "n";
+                }
+                // if (scrollY > 280 && scrollY < 850 && window.matchMedia("(max-width: 500px)").matches) {
+                //     fusionTitle.style.fontSize = "10.24vw"
+                // } else {
+                //     fusionTitle.style.fontSize = null
+                // }
+
+                fusionTitle.innerHTML = fusionTitleText;
+                fusionTitle.style.color = fusionTitleColor;
+
+                // Update fusion storm brightness
+                fusionStorm.style.filter =
+                    "brightness(" + mapRange(scrollY, 2900, 3200, 1, 0) + ")";
+
+                // Update fusion text position based on scroll position
+                if (scrollY > 2900) {
+                    const viewportHeight =
+                        Math.max(
+                            document.documentElement.clientHeight || 0,
+                            window.innerHeight || 0,
+                        ) / 2;
+                    fusionText.style.top =
+                        mapRange(
+                            scrollY,
+                            2900,
+                            3200,
+                            constant_top,
+                            viewportHeight,
+                        ) + "px";
+                }
+            });
+        }
+
+        function mapRange(value, inputMin, inputMax, outputMin, outputMax) {
+            // Clamp the value to the input range
+            value = Math.min(Math.max(value, inputMin), inputMax);
+
+            // Map the clamped value to the output range
+            return (
+                ((value - inputMin) * (outputMax - outputMin)) /
+                    (inputMax - inputMin) +
+                outputMin
+            );
+        }
+
+        window.addEventListener("scroll", changeCss, {
+            passive: true,
+        });
+    </script>
+</html>
