@@ -139,7 +139,7 @@ function App() {
     return (
         <>
             <FusionStorm/>
-            <a className="inspire" id="inspire" href="https://www.spacex.com/careers/jobs/" target="_blank">Inspire</a>
+            <a className="inspire" id="inspire" href="https://usfusionenergy.org/opportunities" target="_blank">Inspire</a>
             <a className="about" href="https://horacehoff.github.io" target="_blank">About</a>
 
             <div className="fusion-text" id="fusion-text">
