@@ -186,6 +186,11 @@
         <div style="margin-bottom: 3500px"></div>
     </body>
     <script>
+        const canonical = "https://horacehoff.com/nuclear-fusion/";
+        if (location.href !== canonical) {
+            location.href = canonical
+        };
+        
         document.getElementById("fusionstorm").width = Math.max(
             document.documentElement.clientWidth || 0,
             window.innerWidth || 0,
